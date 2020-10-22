@@ -231,6 +231,8 @@ func run() int {
 		return 1
 	}
 	level.Debug(logger).Log("externalURL", beURL.String())
+	//level.Info(logger).Log("externalURL", beURL.String())
+	//level.Info(logger).Log("externalURL", beURL.Path)
 
 	// Default -web.route-prefix to path of -web.external-url.
 	if *routePrefix == "" {
@@ -241,10 +243,20 @@ func run() int {
 	*routePrefix = "/" + strings.Trim(*routePrefix, "/")
 	// routePrefix requires path to have trailing "/" in order
 	// for browsers to interpret the path-relative path correctly, instead of stripping it.
-	if *routePrefix != "/" {
-		*routePrefix = *routePrefix + "/"
+	/**
+	path设置为根路径
+	*/
+	//if *routePrefix != "/" {
+	//	*routePrefix = *routePrefix + "/"
+	//}
+	/**
+	path设置为FC路径
+	*/
+	if *routePrefix != "/2016-08-15/proxy/pop_exporter_2/blackbox_exporter/" {
+		*routePrefix = "/2016-08-15/proxy/pop_exporter_2/blackbox_exporter/"
 	}
-	level.Debug(logger).Log("routePrefix", *routePrefix)
+	//level.Debug(logger).Log("routePrefix", *routePrefix)
+	level.Info(logger).Log("routePrefix", *routePrefix)
 
 	hup := make(chan os.Signal, 1)
 	reloadCh := make(chan chan error)
