@@ -5,7 +5,7 @@ LABEL maintainer="The Prometheus Authors <prometheus-developers@googlegroups.com
 
 ARG ARCH="amd64"
 ARG OS="linux"
-COPY .build/${OS}-${ARCH}/blackbox_exporter  /bin/blackbox_exporter
+COPY ./blackbox_exporter  /bin/blackbox_exporter
 COPY blackbox.yml       /etc/blackbox_exporter/config.yml
 
 EXPOSE      9115
