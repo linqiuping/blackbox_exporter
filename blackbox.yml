@@ -31,3 +31,13 @@ modules:
       - expect: "^:[^ ]+ 001"
   icmp:
     prober: icmp
+  tls_connect:
+    prober: tcp
+    timeout: 5s
+    tcp:
+      tls: true
+  ping:
+    prober: icmp
+    timeout: 5s
+    icmp:
+      preferred_ip_protocol: "ip4"
