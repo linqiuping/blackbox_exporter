@@ -31,6 +31,8 @@ modules:
       - expect: "^:[^ ]+ 001"
   icmp:
     prober: icmp
+  dns:
+    prober: dns
   tls_connect:
     prober: tcp
     timeout: 5s
