@@ -9,6 +9,8 @@ modules:
     timeout: 10s
     http:
       method: POST
+    tls_config:
+      insecure_skip_verify: true
   tcp_connect:
     prober: tcp
     timeout: 10s
