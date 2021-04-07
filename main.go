@@ -246,15 +246,15 @@ func run() int {
 	/**
 	path设置为根路径
 	*/
-	//if *routePrefix != "/" {
-	//	*routePrefix = *routePrefix + "/"
-	//}
-	/**
-	path设置为FC路径
-	*/
-	if *routePrefix != "/2016-08-15/proxy/pop_exporter_2/blackbox_exporter/" {
-		*routePrefix = "/2016-08-15/proxy/pop_exporter_2/blackbox_exporter/"
+	if *routePrefix != "/" {
+		*routePrefix = *routePrefix + "/"
 	}
+	/**
+	//path设置为FC路径
+	//*/
+	//if *routePrefix != "/2016-08-15/proxy/pop_exporter_2/blackbox_exporter/" {
+	//	*routePrefix = "/2016-08-15/proxy/pop_exporter_2/blackbox_exporter/"
+	//}
 	//level.Debug(logger).Log("routePrefix", *routePrefix)
 	level.Info(logger).Log("routePrefix", *routePrefix)
 
